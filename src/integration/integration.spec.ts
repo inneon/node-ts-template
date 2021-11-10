@@ -12,7 +12,7 @@ const systemUnderTest = axios.create({
 describe('integration tests', () => {
   it('should get the healthcheck endpoint', async () => {
     const response = await systemUnderTest.get('/internal/healthcheck')
-
+    console.warn(response.status)
     expect(response.status).toEqual(200)
   })
 })
