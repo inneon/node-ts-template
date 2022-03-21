@@ -1,11 +1,11 @@
 # Install Stage
-FROM node:17.0.1-alpine as base
+FROM node:17.7.2-alpine as base
 WORKDIR /usr/src/app
 COPY . .
 RUN npm ci &&\
   npm run build
 
-FROM node:17.0.1-alpine as test
+FROM node:17.7.2-alpine as test
 WORKDIR /usr/src/app
 COPY . .
 RUN npm ci
